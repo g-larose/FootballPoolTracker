@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignColors.Recommended;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,15 @@ namespace Football_Pool_Tracker.Domain.Entities
 {
     public class Matchup
     {
+        public int Id { get; set; } //this is for DB lookup only.
+        public Team AwayTeam { get; set; } = new();
+        public Team HomeTeam { get; set; } = new();
+        public int Year { get; set; }
+        public int Week { get; set; }
+        public int AwayTeamScore { get; set; }
+        public int HomeTeamScore { get; set; }
+        public DateTime GameDate { get; set; }
+        public GameType GameType { get; set; }
 
     }
 }

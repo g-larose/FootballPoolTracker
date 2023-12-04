@@ -9,6 +9,6 @@ namespace Football_Pool_Tracker.Application.Interface
 {
     public interface IFootballDataProvider
     {
-        Task<Matchup> GetWeeklyMatchups(string year, string week, CancellationToken ct = default);
+        List<Matchup> GetWeeklyMatchups(string year, string week, CancellationToken ct = default);
     }
 }
