@@ -1,4 +1,6 @@
-﻿using Football_Pool_Tracker.UI.MVVM.ViewModels;
+﻿using Football_Pool_Tracker.Application.Interface;
+using Football_Pool_Tracker.Infrastructure.Helper;
+using Football_Pool_Tracker.UI.MVVM.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Configuration;
@@ -7,7 +9,7 @@ using System.Windows;
 
 namespace Football_Pool_Tracker
 {
-    public partial class App : Application
+    public partial class App
     {
         private IHost _host;
 
@@ -15,6 +17,8 @@ namespace Football_Pool_Tracker
         {
             _host = Host.CreateDefaultBuilder().ConfigureServices(services =>
             {
+                services.AddSingleton<IFootballDataProvider, FootballDataProvider>();
+                services.AddSingleton<IHtmlDataProvider, HtmlDataProvider>();
                 services.AddSingleton<MainWindow>(s => new MainWindow()
                 {
                     DataContext = new AppViewModel()

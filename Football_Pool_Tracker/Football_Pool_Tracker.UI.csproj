@@ -9,6 +9,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Logo\ARI.png" />
+    <None Remove="Assets\Logo\ATL.png" />
+    <None Remove="Assets\Logo\BAL.png" />
+    <None Remove="Assets\Logo\BUF.png" />
+    <None Remove="Assets\Logo\CAR.png" />
+    <None Remove="Assets\Logo\CHI.png" />
+    <None Remove="Assets\Logo\CIN.png" />
+    <None Remove="Assets\Logo\CLE.png" />
+    <None Remove="Assets\Logo\DAL.png" />
+    <None Remove="Assets\Logo\DEN.png" />
+    <None Remove="Assets\Logo\DET.png" />
+    <None Remove="Assets\Logo\GB.png" />
+    <None Remove="Assets\Logo\HOU.png" />
+    <None Remove="Assets\Logo\img_default.png" />
+    <None Remove="Assets\Logo\IND.png" />
+    <None Remove="Assets\Logo\JAX.png" />
+    <None Remove="Assets\Logo\KC.png" />
+    <None Remove="Assets\Logo\LAC.png" />
+    <None Remove="Assets\Logo\LAR.png" />
+    <None Remove="Assets\Logo\logo.png" />
+    <None Remove="Assets\Logo\LV.png" />
+    <None Remove="Assets\Logo\MIA.png" />
+    <None Remove="Assets\Logo\MIN.png" />
+    <None Remove="Assets\Logo\NE.png" />
+    <None Remove="Assets\Logo\NO.png" />
+    <None Remove="Assets\Logo\NYG.png" />
+    <None Remove="Assets\Logo\NYJ.png" />
+    <None Remove="Assets\Logo\PHI.png" />
+    <None Remove="Assets\Logo\PIT.png" />
+    <None Remove="Assets\Logo\SEA.png" />
+    <None Remove="Assets\Logo\SF.png" />
+    <None Remove="Assets\Logo\TB.png" />
+    <None Remove="Assets\Logo\TEN.png" />
+    <None Remove="Assets\Logo\WAS.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
@@ -33,6 +70,49 @@
   <ItemGroup>
     <Folder Include="MVVM\Models\" />
     <Folder Include="MVVM\Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Football_Pool_Tracker.Application\Football_Pool_Tracker.Application.csproj" />
+    <ProjectReference Include="..\Football_Pool_Tracker.Domain\Football_Pool_Tracker.Domain.csproj" />
+    <ProjectReference Include="..\Football_Pool_Tracker.Infrastructure\Football_Pool_Tracker.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Logo\ARI.png" />
+    <Resource Include="Assets\Logo\ATL.png" />
+    <Resource Include="Assets\Logo\BAL.png" />
+    <Resource Include="Assets\Logo\BUF.png" />
+    <Resource Include="Assets\Logo\CAR.png" />
+    <Resource Include="Assets\Logo\CHI.png" />
+    <Resource Include="Assets\Logo\CIN.png" />
+    <Resource Include="Assets\Logo\CLE.png" />
+    <Resource Include="Assets\Logo\DAL.png" />
+    <Resource Include="Assets\Logo\DEN.png" />
+    <Resource Include="Assets\Logo\DET.png" />
+    <Resource Include="Assets\Logo\GB.png" />
+    <Resource Include="Assets\Logo\HOU.png" />
+    <Resource Include="Assets\Logo\img_default.png" />
+    <Resource Include="Assets\Logo\IND.png" />
+    <Resource Include="Assets\Logo\JAX.png" />
+    <Resource Include="Assets\Logo\KC.png" />
+    <Resource Include="Assets\Logo\LAC.png" />
+    <Resource Include="Assets\Logo\LAR.png" />
+    <Resource Include="Assets\Logo\logo.png" />
+    <Resource Include="Assets\Logo\LV.png" />
+    <Resource Include="Assets\Logo\MIA.png" />
+    <Resource Include="Assets\Logo\MIN.png" />
+    <Resource Include="Assets\Logo\NE.png" />
+    <Resource Include="Assets\Logo\NO.png" />
+    <Resource Include="Assets\Logo\NYG.png" />
+    <Resource Include="Assets\Logo\NYJ.png" />
+    <Resource Include="Assets\Logo\PHI.png" />
+    <Resource Include="Assets\Logo\PIT.png" />
+    <Resource Include="Assets\Logo\SEA.png" />
+    <Resource Include="Assets\Logo\SF.png" />
+    <Resource Include="Assets\Logo\TB.png" />
+    <Resource Include="Assets\Logo\TEN.png" />
+    <Resource Include="Assets\Logo\WAS.png" />
   </ItemGroup>
 
 </Project>
