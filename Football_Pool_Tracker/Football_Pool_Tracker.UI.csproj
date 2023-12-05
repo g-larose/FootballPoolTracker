@@ -92,7 +92,9 @@
     <Resource Include="Assets\Logo\DET.png" />
     <Resource Include="Assets\Logo\GB.png" />
     <Resource Include="Assets\Logo\HOU.png" />
-    <Resource Include="Assets\Logo\img_default.png" />
+    <Resource Include="Assets\Logo\img_default.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Logo\IND.png" />
     <Resource Include="Assets\Logo\JAX.png" />
     <Resource Include="Assets\Logo\KC.png" />
