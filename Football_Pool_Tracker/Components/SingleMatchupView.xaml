@@ -3,13 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Football_Pool_Tracker.UI.Components"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              Height="150" Width="Auto">
-    <md:Card 
+    <md:Card md:ElevationAssist.Elevation="Dp3"
              UniformCornerRadius="6"
-             Background="{StaticResource MaterialDesignDarkBackground}">
+             Background="{StaticResource PrimaryBackgroundDarkToSecondaryBackgroundDarkGradientBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -33,20 +32,24 @@
                        Margin="0 0 10 0"/> 
                 <StackPanel Orientation="Vertical"
                             VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Path=AwayTeam.Name, FallbackValue=Away Team}" 
+                               Foreground="WhiteSmoke"
+                               FontWeight="Bold" 
+                               FontSize="18"
+                               Margin="6 0"
+                               VerticalAlignment="Center"/>
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <TextBlock Text="{Binding Path=AwayTeam.Name}" 
-                                   Foreground="WhiteSmoke"
-                                   FontWeight="Bold" 
-                                   FontSize="18"
-                                   Margin="6 0"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Text="(1-1-0)" 
-                                   Foreground="WhiteSmoke"
-                                   FontWeight="Bold" 
-                                   FontSize="12"
-                                   Margin="6 4 0 0"
-                                   VerticalAlignment="Center"/>
+                             <TextBlock Text="{Binding Path=AwayTeam.Abbr}" 
+                                                                     Foreground="LightSeaGreen"
+                                                                     FontSize="10"
+                                                                     Margin="6 0"/>
+                             <TextBlock Text="{Binding Path=AwayTeam.Record}" 
+                                        Foreground="LightSeaGreen"
+                                        FontWeight="Bold" 
+                                        FontSize="10"
+                                        Margin="6 0"
+                                        VerticalAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
@@ -66,19 +69,23 @@
                        Margin="0 0 10 0"/> 
                 <StackPanel Orientation="Vertical"
                             VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Path=HomeTeam.Name, FallbackValue=Home Team}" 
+                               Foreground="WhiteSmoke"
+                               FontWeight="Bold" 
+                               FontSize="18"
+                               Margin="6 0"
+                               VerticalAlignment="Center"/>
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <TextBlock Text="{Binding Path=HomeTeam.Name}" 
-                                   Foreground="WhiteSmoke"
+                        <TextBlock Text="{Binding Path=HomeTeam.Abbr}" 
+                                   Foreground="LightSeaGreen"
+                                   FontSize="10"
+                                   Margin="6 0"/>
+                        <TextBlock Text="{Binding Path=HomeTeam.Record}" 
+                                   Foreground="LightSeaGreen"
                                    FontWeight="Bold" 
-                                   FontSize="18"
+                                   FontSize="10"
                                    Margin="6 0"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Text="(1-1-0)" 
-                                   Foreground="WhiteSmoke"
-                                   FontWeight="Bold" 
-                                   FontSize="12"
-                                   Margin="6 4 0 0"
                                    VerticalAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>

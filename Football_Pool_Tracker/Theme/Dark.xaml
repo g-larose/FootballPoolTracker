@@ -20,13 +20,13 @@
     
     <!-- GRADIENTS -->
     <LinearGradientBrush x:Key="PrimaryBackgroundDarkToSecondaryBackgroundDarkGradientBrush"
-                         StartPoint="0,1"
-                         EndPoint="0,0">
+                         StartPoint="0.5,0"
+                         EndPoint="0.5, 1">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0.5, 0.0"
-                          Color="{StaticResource PrimaryBackgroundDark}" />
-            <GradientStop Offset="0.5, 1.0" 
-                          Color="{StaticResource SecondaryBackgroundDark}"/>
+            <GradientStop Offset="0.5"
+                          Color="{StaticResource SecondaryBackgroundDark}" />
+            <GradientStop Offset="1" 
+                          Color="{StaticResource PrimaryBackgroundDark}"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 </ResourceDictionary>

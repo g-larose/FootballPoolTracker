@@ -1,4 +1,4 @@
-﻿using Football_Pool_Tracker.UI.MVVM.ViewModels;
+﻿using Football_Pool_Tracker.Application.Common;
 namespace Football_Pool_Tracker.Application.Interface;
 
 public interface INavigator

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Printing;
 using System.Runtime.InteropServices.JavaScript;
+using Football_Pool_Tracker.Application.Common;
 using Football_Pool_Tracker.Domain.Entities;
 
 namespace Football_Pool_Tracker.UI.MVVM.ViewModels;
