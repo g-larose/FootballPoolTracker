@@ -7,8 +7,9 @@
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              Height="150" Width="Auto">
-    <md:Card md:ElevationAssist.Elevation="Dp2"
-             UniformCornerRadius="6">
+    <md:Card 
+             UniformCornerRadius="6"
+             Background="{StaticResource MaterialDesignDarkBackground}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -28,13 +29,13 @@
                           Height="20"/>
                 <Image Height="64"
                        Width="64" 
-                       Source="/Assets/Logo/img_default.png"
+                       Source="{Binding Path=AwayTeam.LogoUrl}"
                        Margin="0 0 10 0"/> 
                 <StackPanel Orientation="Vertical"
                             VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <TextBlock Text="Away Team Name" 
+                        <TextBlock Text="{Binding Path=AwayTeam.Name}" 
                                    Foreground="WhiteSmoke"
                                    FontWeight="Bold" 
                                    FontSize="18"
@@ -61,13 +62,13 @@
                           Height="20"/>
                 <Image Height="64"
                        Width="64" 
-                       Source="/Assets/Logo/img_default.png"
+                       Source="{Binding Path=HomeTeam.LogoUrl}"
                        Margin="0 0 10 0"/> 
                 <StackPanel Orientation="Vertical"
                             VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <TextBlock Text="Home Team Name" 
+                        <TextBlock Text="{Binding Path=HomeTeam.Name}" 
                                    Foreground="WhiteSmoke"
                                    FontWeight="Bold" 
                                    FontSize="18"

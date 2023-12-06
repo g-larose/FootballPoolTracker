@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using Football_Pool_Tracker.MVVM.Navigation;
 
 namespace Football_Pool_Tracker
 {
@@ -17,12 +18,15 @@ namespace Football_Pool_Tracker
         {
             _host = Host.CreateDefaultBuilder().ConfigureServices(services =>
             {
+                services.AddSingleton<AppViewModel>();
                 services.AddSingleton<IFootballDataProvider, FootballDataProvider>();
+                services.AddSingleton<INavigator, Navigator>();
                 services.AddSingleton<IHtmlDataProvider, HtmlDataProvider>();
                 services.AddSingleton<MainWindow>(s => new MainWindow()
                 {
-                    DataContext = new AppViewModel()
+                    DataContext = s.GetRequiredService<AppViewModel>()
                 });
+                services.AddSingleton<MatchupsViewModel>();
             }).Build();
         }
 
