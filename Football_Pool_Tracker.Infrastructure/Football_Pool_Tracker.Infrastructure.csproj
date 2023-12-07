@@ -32,4 +32,10 @@
     <ProjectReference Include="..\Football_Pool_Tracker.Domain\Football_Pool_Tracker.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\Json\team_names.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

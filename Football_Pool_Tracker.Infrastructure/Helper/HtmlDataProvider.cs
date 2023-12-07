@@ -10,10 +10,10 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
 {
     public class HtmlDataProvider : IHtmlDataProvider
     {
-        public HtmlNodeCollection GetNodes(string nodeName)
+        public HtmlNodeCollection GetNodes(string year, string week, string nodeName)
         {
 
-            var link = "http://www.footballdb.com";
+            var link = $"https://www.footballdb.com/scores/index.html?lg=NFL&yr={year}&type=reg&wk={week}";
             var web = new HtmlWeb();
             var doc = web.Load(link);
             var nodes = doc.DocumentNode.SelectNodes(nodeName);

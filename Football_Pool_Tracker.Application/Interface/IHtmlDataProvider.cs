@@ -9,6 +9,6 @@ namespace Football_Pool_Tracker.Application.Interface
 {
     public interface IHtmlDataProvider
     {
-        HtmlNodeCollection GetNodes(string nodeName);
+        HtmlNodeCollection GetNodes(string year, string week, string nodeName);
     }
 }
