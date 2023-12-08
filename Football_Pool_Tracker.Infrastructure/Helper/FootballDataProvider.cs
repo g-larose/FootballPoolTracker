@@ -33,7 +33,31 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
                 var homeTeamName        = homeNode.ChildNodes[1].InnerText.Split('(')[0];
                 var homeTeamRecordIndex = homeNode.ChildNodes[1].InnerText.LastIndexOf('(');
                 var homeTeamRecord      = homeNode.ChildNodes[1].InnerText.Substring(homeTeamRecordIndex - 1);
-                var test = "";      
+                var matchup = new Matchup()
+                {
+                    GameDate = DateTime.Today,
+                    GameType = GameType.REGULAR,
+                    Year = int.Parse(year),
+                    Week = int.Parse(week),
+                    AwayTeam = new Team()
+                    {
+                        Name = awayTeamName,
+                        //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
+                        Record = awayTeamRecord,
+                        IsWinner = false,
+                        //TODO: here we need to abstract a method to fetch the logo url from the team name.
+                    },
+                    HomeTeam = new Team()
+                    {
+                        Name = homeTeamName,
+                        //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
+                        Record = homeTeamRecord,
+                        IsWinner = false,
+                        //TODO: here we need to abstract a method to fetch the logo url from the team name.
+                    }
+                };
+                
+                matchups.Add(matchup);
             }
             
             return matchups;
