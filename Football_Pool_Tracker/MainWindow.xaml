@@ -10,6 +10,7 @@
     Title="Football Pool Tracker"
     Width="1200"
     Height="850"
+    MinWidth="340"
     ResizeMode="CanResizeWithGrip"
     Style="{StaticResource MaterialDesignWindow}"
     WindowStartupLocation="CenterScreen"

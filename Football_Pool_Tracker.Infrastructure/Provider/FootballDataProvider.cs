@@ -3,7 +3,7 @@ using Football_Pool_Tracker.Domain.Entities;
 using Football_Pool_Tracker.Infrastructure.Extensions;
 using HtmlAgilityPack;
 
-namespace Football_Pool_Tracker.Infrastructure.Helper
+namespace Football_Pool_Tracker.Infrastructure.Provider
 {
     public class FootballDataProvider : IFootballDataProvider
     {
@@ -12,7 +12,7 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
         {
             _htmlDataProvider = htmlDataProvider;
         }
-        public List<Matchup> GetWeeklyMatchups(string year, string week, CancellationToken ct = default)
+        public List<Matchup> GetWeeklyMatchups(uint year = 0, uint week = 0, CancellationToken ct = default)
         {
             var matchups = new List<Matchup>();
             var matchupNodes = _htmlDataProvider.GetNodes(year, week, ".//div[@class='lngame']/table/tbody/tr");
@@ -26,34 +26,33 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
                 
                 var matchup = new Matchup()
                 {
-                    GameDate = DateTime.Today,
-                    GameType = GameType.REGULAR,
-                    Year = int.Parse(year),
-                    Week = int.Parse(week),
-                    AwayTeam = new Team()
+                    GameDate   = DateTime.Today,
+                    GameType   = GameType.REGULAR,
+                    Year       = year, 
+                    Week       = week,
+                    AwayTeam   = new Team()
                     {
-                        Name = awayNode.Name,
-                        Record = awayNode.Record,
-                        Abbr = awayNode.Abbr,
-                        Division = awayNode.Division,
-                        LogoUrl = awayNode.LogoUrl,
-                        IsWinner = false,
+                        Name             = awayNode.Name,
+                        Record           = awayNode.Record,
+                        Abbreviation     = awayNode.Abbreviation,
+                        Division         = awayNode.Division,
+                        LogoUrl          = awayNode.LogoUrl,
+                        IsWinner         = false,
                     },
                     HomeTeam = new Team()
                     {
-                        Name = homeNode.Name,
-                        Record = homeNode.Record,
-                        Abbr = homeNode.Abbr,
-                        Division = homeNode.Division,
-                        LogoUrl = homeNode.LogoUrl,
-                        IsWinner = false,
+                        Name            = homeNode.Name,
+                        Record          = homeNode.Record,
+                        Abbreviation    = homeNode.Abbreviation,
+                        Division        = homeNode.Division,
+                        LogoUrl         = homeNode.LogoUrl,
+                        IsWinner        = false,
                     }
                 };
                 matchups.Add(matchup);
             }
             return matchups;
         }
-
         private Team ParseTeamData(HtmlNode node)
         {
             var teamName        = node.ChildNodes[1].InnerText.Split('(')[0].Trim();
@@ -65,14 +64,13 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
 
             var team = new Team()
             {
-                Name = teamName,
-                Abbr = abbr,
-                Record = teamRecord,
-                Division = division,
-                IsWinner = false,
-                LogoUrl = logoUrl
+                Name         = teamName,
+                Abbreviation = abbr,
+                Record       = teamRecord,
+                Division     = division,
+                IsWinner     = false,
+                LogoUrl      = logoUrl
             };
-
             return team;
         }
     }

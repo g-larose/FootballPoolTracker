@@ -1,5 +1,5 @@
 ﻿using Football_Pool_Tracker.Application.Interface;
-using Football_Pool_Tracker.Infrastructure.Helper;
+using Football_Pool_Tracker.Infrastructure.Provider;
 using Football_Pool_Tracker.UI.MVVM.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

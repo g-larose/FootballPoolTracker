@@ -12,8 +12,8 @@ namespace Football_Pool_Tracker.Domain.Entities
         public int Id { get; set; } //this is for DB lookup only.
         public Team AwayTeam { get; set; } = new();
         public Team HomeTeam { get; set; } = new();
-        public int Year { get; set; }
-        public int Week { get; set; }
+        public uint Year { get; set; }
+        public uint Week { get; set; }
         public int AwayTeamScore { get; set; }
         public int HomeTeamScore { get; set; }
         public DateTime GameDate { get; set; }
