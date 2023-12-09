@@ -13,6 +13,7 @@ namespace Football_Pool_Tracker.Domain.Entities
         public string Abbr { get; set; } = string.Empty;
         public string Record { get; set; } = string.Empty;
         public string LogoUrl { get; set; } = string.Empty;
+        public string Division { get; set; } = string.Empty;
         public bool IsWinner { get; set; }
     }
 }

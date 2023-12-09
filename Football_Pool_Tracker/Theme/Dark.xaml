@@ -1,6 +1,5 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- COLORS -->
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  COLORS  -->
     <Color x:Key="Primary">#4D919B</Color>
     <Color x:Key="PrimaryDark">#273745</Color>
     <Color x:Key="Accent">#FF7069</Color>
@@ -8,8 +7,8 @@
     <Color x:Key="Secondary">#D2D2D2</Color>
     <Color x:Key="PrimaryBackgroundDark">#0A1A2C</Color>
     <Color x:Key="SecondaryBackgroundDark">#273745</Color>
-    
-    <!-- BRUSHES -->
+
+    <!--  BRUSHES  -->
     <SolidColorBrush x:Key="PrimaryColorBrush" Color="{StaticResource Primary}" />
     <SolidColorBrush x:Key="SecondaryColorBrush" Color="{StaticResource Secondary}" />
     <SolidColorBrush x:Key="AccentColorBrush" Color="{StaticResource Accent}" />
@@ -17,16 +16,12 @@
     <SolidColorBrush x:Key="SecondaryDArkColorBrush" Color="{StaticResource SecondaryDark}" />
     <SolidColorBrush x:Key="PrimaryBackgroundDarkColorBrush" Color="{StaticResource PrimaryBackgroundDark}" />
     <SolidColorBrush x:Key="SecondaryBackgroundDarkColorBrush" Color="{StaticResource SecondaryBackgroundDark}" />
-    
-    <!-- GRADIENTS -->
-    <LinearGradientBrush x:Key="PrimaryBackgroundDarkToSecondaryBackgroundDarkGradientBrush"
-                         StartPoint="0.5,0"
-                         EndPoint="0.5, 1">
+
+    <!--  GRADIENTS  -->
+    <LinearGradientBrush x:Key="PrimaryBackgroundDarkToSecondaryBackgroundDarkGradientBrush" StartPoint="0.5,0" EndPoint="0.5, 1">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0.5"
-                          Color="{StaticResource SecondaryBackgroundDark}" />
-            <GradientStop Offset="1" 
-                          Color="{StaticResource PrimaryBackgroundDark}"/>
+            <GradientStop Offset="0.5" Color="{StaticResource SecondaryBackgroundDark}" />
+            <GradientStop Offset="1" Color="{StaticResource PrimaryBackgroundDark}" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 </ResourceDictionary>

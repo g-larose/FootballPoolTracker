@@ -3,22 +3,25 @@ using System.Diagnostics;
 using System.Printing;
 using System.Runtime.InteropServices.JavaScript;
 using Football_Pool_Tracker.Application.Common;
+using Football_Pool_Tracker.Application.Interface;
 using Football_Pool_Tracker.Domain.Entities;
 
 namespace Football_Pool_Tracker.UI.MVVM.ViewModels;
 
 public class MatchupsViewModel : ViewModelBase
 {
-    private ObservableCollection<Matchup> _matchups;
-    public ObservableCollection<Matchup> Matchups
+    private readonly IFootballDataProvider _footballDataProvider;
+    private List<Matchup> _matchups;
+    public List<Matchup> Matchups
     {
         get => _matchups;
         set => OnPropertyChanged(ref _matchups, value);
     }
 
-    public MatchupsViewModel()
+    public MatchupsViewModel(IFootballDataProvider footballDataProvider)
     {
-        Matchups = LoadMatchups();
+        _footballDataProvider = footballDataProvider;
+        Matchups = _footballDataProvider.GetWeeklyMatchups("2023", "1");
     }
 
     private ObservableCollection<Matchup> LoadMatchups()

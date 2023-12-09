@@ -17,7 +17,8 @@ namespace Football_Pool_Tracker.UI.MVVM.ViewModels
             _navigator = navigator;
             _footballDataProvider = footballDataProvider;
             _navigator.CurrentViewModelChanged += OnSelectedViewModelChanged;
-            OpenCommand = new NavigateCommand<MatchupsViewModel>(_navigator, () => new MatchupsViewModel());
+            _navigator.CurrentViewModel = new MatchupsViewModel(_footballDataProvider);
+            OpenCommand = new NavigateCommand<MatchupsViewModel>(_navigator, () => new MatchupsViewModel(_footballDataProvider));
             TestCommand = new RelayCommand(Test);
         }
         

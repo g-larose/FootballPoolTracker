@@ -44,6 +44,9 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
                         Name = awayTeamName,
                         //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
                         Record = awayTeamRecord,
+                        Abbr = "Abbr",
+                        Division = "NFC",
+                        LogoUrl ="/Assets/Logo/TB.png",
                         IsWinner = false,
                         //TODO: here we need to abstract a method to fetch the logo url from the team name.
                     },
@@ -52,6 +55,9 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
                         Name = homeTeamName,
                         //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
                         Record = homeTeamRecord,
+                        Abbr = "Abbr",
+                        Division = "NFC",
+                        LogoUrl ="/Assets/Logo/DAL.png",
                         IsWinner = false,
                         //TODO: here we need to abstract a method to fetch the logo url from the team name.
                     }

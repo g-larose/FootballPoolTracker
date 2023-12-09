@@ -29,7 +29,7 @@
         <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <MenuItem Header="_File">
                 <MenuItem Header="_Open"
-                          Command="{Binding TestCommand}"/>
+                          Command="{Binding OpenCommand}"/>
                 <MenuItem Header="_Exit" Command="{x:Static ApplicationCommands.Close}" />
             </MenuItem>
             <MenuItem Header="_Stats">
