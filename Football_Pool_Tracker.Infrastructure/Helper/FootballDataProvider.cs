@@ -1,11 +1,6 @@
 ﻿using Football_Pool_Tracker.Application.Interface;
 using Football_Pool_Tracker.Domain.Entities;
-using HtmlAgilityPack;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Football_Pool_Tracker.Infrastructure.Extensions;
 
 namespace Football_Pool_Tracker.Infrastructure.Helper
 {
@@ -23,14 +18,18 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
 
             for (int i = 0; i < matchupNodes.Count; i+= 2)
             {
+                //TODO: check for null here before we try to access the node.
+                //node may be null and will throw an exception.
                 var homeNode            = matchupNodes[i + 1];
                 var awayNode            = matchupNodes[i];
                 
-                var awayTeamName        = awayNode.ChildNodes[1].InnerText.Split('(')[0];
+                var awayTeamName        = awayNode.ChildNodes[1].InnerText.Split('(')[0].Trim();
+                var awayAbbr = awayTeamName.ToTeamAbbr();
                 var awayTeamRecordIndex = awayNode.ChildNodes[1].InnerText.LastIndexOf('(');
                 var awayTeamRecord      = awayNode.ChildNodes[1].InnerText.Substring(awayTeamRecordIndex - 1);
                 
-                var homeTeamName        = homeNode.ChildNodes[1].InnerText.Split('(')[0];
+                var homeTeamName        = homeNode.ChildNodes[1].InnerText.Split('(')[0].Trim();
+                var homeAbbr = homeTeamName.ToTeamAbbr();
                 var homeTeamRecordIndex = homeNode.ChildNodes[1].InnerText.LastIndexOf('(');
                 var homeTeamRecord      = homeNode.ChildNodes[1].InnerText.Substring(homeTeamRecordIndex - 1);
                 var matchup = new Matchup()
@@ -44,7 +43,7 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
                         Name = awayTeamName,
                         //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
                         Record = awayTeamRecord,
-                        Abbr = "Abbr",
+                        Abbr = awayAbbr,
                         Division = "NFC",
                         LogoUrl ="/Assets/Logo/TB.png",
                         IsWinner = false,
@@ -55,7 +54,7 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
                         Name = homeTeamName,
                         //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
                         Record = homeTeamRecord,
-                        Abbr = "Abbr",
+                        Abbr = homeAbbr,
                         Division = "NFC",
                         LogoUrl ="/Assets/Logo/DAL.png",
                         IsWinner = false,

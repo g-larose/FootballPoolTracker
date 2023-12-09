@@ -29,7 +29,7 @@ namespace Football_Pool_Tracker.UI.MVVM.ViewModels
 
         private void Test()
         {
-            var data = _footballDataProvider.GetWeeklyMatchups("2023", "14");
+            var data = _footballDataProvider.GetWeeklyMatchups("2023", "15");
             for (int i = 0; i < data.Count(); i+= 2)
             {
                
