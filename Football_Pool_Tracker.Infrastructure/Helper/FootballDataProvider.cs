@@ -1,6 +1,7 @@
 ﻿using Football_Pool_Tracker.Application.Interface;
 using Football_Pool_Tracker.Domain.Entities;
 using Football_Pool_Tracker.Infrastructure.Extensions;
+using HtmlAgilityPack;
 
 namespace Football_Pool_Tracker.Infrastructure.Helper
 {
@@ -20,18 +21,9 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
             {
                 //TODO: check for null here before we try to access the node.
                 //node may be null and will throw an exception.
-                var homeNode            = matchupNodes[i + 1];
-                var awayNode            = matchupNodes[i];
+                var homeNode            = ParseTeamData(matchupNodes[i + 1]);
+                var awayNode            = ParseTeamData(matchupNodes[i]);
                 
-                var awayTeamName        = awayNode.ChildNodes[1].InnerText.Split('(')[0].Trim();
-                var awayAbbr = awayTeamName.ToTeamAbbr();
-                var awayTeamRecordIndex = awayNode.ChildNodes[1].InnerText.LastIndexOf('(');
-                var awayTeamRecord      = awayNode.ChildNodes[1].InnerText.Substring(awayTeamRecordIndex - 1);
-                
-                var homeTeamName        = homeNode.ChildNodes[1].InnerText.Split('(')[0].Trim();
-                var homeAbbr = homeTeamName.ToTeamAbbr();
-                var homeTeamRecordIndex = homeNode.ChildNodes[1].InnerText.LastIndexOf('(');
-                var homeTeamRecord      = homeNode.ChildNodes[1].InnerText.Substring(homeTeamRecordIndex - 1);
                 var matchup = new Matchup()
                 {
                     GameDate = DateTime.Today,
@@ -40,32 +32,48 @@ namespace Football_Pool_Tracker.Infrastructure.Helper
                     Week = int.Parse(week),
                     AwayTeam = new Team()
                     {
-                        Name = awayTeamName,
-                        //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
-                        Record = awayTeamRecord,
-                        Abbr = awayAbbr,
-                        Division = "NFC",
-                        LogoUrl ="/Assets/Logo/TB.png",
+                        Name = awayNode.Name,
+                        Record = awayNode.Record,
+                        Abbr = awayNode.Abbr,
+                        Division = awayNode.Division,
+                        LogoUrl = awayNode.LogoUrl,
                         IsWinner = false,
-                        //TODO: here we need to abstract a method to fetch the logo url from the team name.
                     },
                     HomeTeam = new Team()
                     {
-                        Name = homeTeamName,
-                        //TODO: here we need to abstract a method to convert the team name into it's abbreviation (not written yet).
-                        Record = homeTeamRecord,
-                        Abbr = homeAbbr,
-                        Division = "NFC",
-                        LogoUrl ="/Assets/Logo/DAL.png",
+                        Name = homeNode.Name,
+                        Record = homeNode.Record,
+                        Abbr = homeNode.Abbr,
+                        Division = homeNode.Division,
+                        LogoUrl = homeNode.LogoUrl,
                         IsWinner = false,
-                        //TODO: here we need to abstract a method to fetch the logo url from the team name.
                     }
                 };
-                
                 matchups.Add(matchup);
             }
-            
             return matchups;
+        }
+
+        private Team ParseTeamData(HtmlNode node)
+        {
+            var teamName        = node.ChildNodes[1].InnerText.Split('(')[0].Trim();
+            var abbr            = teamName.ToTeamAbbr();
+            var division        = teamName.ToDivision();
+            var teamRecordIndex = node.ChildNodes[1].InnerText.LastIndexOf('(');
+            var teamRecord      = node.ChildNodes[1].InnerText.Substring(teamRecordIndex - 1);
+            var logoUrl         = $"/Assets/Logo/{abbr}.png";
+
+            var team = new Team()
+            {
+                Name = teamName,
+                Abbr = abbr,
+                Record = teamRecord,
+                Division = division,
+                IsWinner = false,
+                LogoUrl = logoUrl
+            };
+
+            return team;
         }
     }
 }

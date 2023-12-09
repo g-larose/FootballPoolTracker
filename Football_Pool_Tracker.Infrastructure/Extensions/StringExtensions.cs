@@ -23,14 +23,14 @@ public static class StringExtensions
             "Jacksonville" => "JAX",
             "Kansas City" => "KC",
             "LA Chargers" => "LAC",
-            "LA Rams" => "LA",
+            "LA Rams" => "LAR",
             "Miami" => "MIA",
             "Minnesota" => "MIN",
             "New England" => "NE",
             "New Orleans" => "NO",
-            "Giants" => "NYG",
+            "NY Giants" => "NYG",
             "NY Jets" => "NYJ",
-            "Raiders" => "LV",
+            "Las Vegas" => "LV",
             "Philadelphia" => "PHI",
             "Pittsburgh" => "PIT",
             "Chargers" => "SD",
@@ -41,7 +41,48 @@ public static class StringExtensions
             "Washington" => "WAS",
             _ => teamName
         };
+        return result;
+    }
 
+    public static string ToDivision(this string teamName)
+    {
+        var result = teamName switch
+        {
+            "Arizona" => "NFC",
+            "Atlanta" => "NFC",
+            "Baltimore" => "AFC",
+            "Chicago" => "NFC",
+            "Buffalo" => "AFC",
+            "Carolina" => "NFC",
+            "Chargers" => "AFC",
+            "Cincinnati" => "AFC",
+            "Cleveland" => "AFC",
+            "Dallas" => "NFC",
+            "Denver" => "AFC",
+            "Detroit" => "NFC",
+            "Green Bay" => "NFC",
+            "Houston" => "AFC",
+            "Indianapolis" => "AFC",
+            "Jacksonville" => "AFC",
+            "Kansas City" => "AFC",
+            "LA Chargers" => "AFC",
+            "LA Rams" => "NFC",
+            "Las Vegas" => "AFC",
+            "Miami" => "AFC",
+            "Minnesota" => "NFC",
+            "New England" => "AFC",
+            "New Orleans" => "NFC",
+            "NY Giants" => "NFC",
+            "NY Jets" => "AFC",
+            "Philadelphia" => "NFC",
+            "Pittsburgh" => "AFC",
+            "San Francisco" => "NFC",
+            "Seattle" => "NFC",
+            "Tampa Bay" => "NFC",
+            "Tennessee" => "AFC",
+            "Washington" => "NFC",
+            _ => teamName
+        };
         return result;
     }
 }
