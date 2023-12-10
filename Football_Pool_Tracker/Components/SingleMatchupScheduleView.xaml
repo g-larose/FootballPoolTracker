@@ -22,7 +22,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <!--#region GAME DATE -->
-            <TextBlock Text="GAME DATE" 
+            <TextBlock Text="{Binding Path=GameDate}" 
                        Foreground="Chartreuse"
                        FontSize="14"
                        FontWeight="Bold"

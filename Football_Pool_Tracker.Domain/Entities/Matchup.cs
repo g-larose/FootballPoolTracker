@@ -16,7 +16,7 @@ namespace Football_Pool_Tracker.Domain.Entities
         public uint Week { get; set; }
         public List<int> AwayTeamScores { get; set; }
         public List<int> HomeTeamScores { get; set; }
-        public DateTime GameDate { get; set; }
+        public string GameDate { get; set; }
         public GameType GameType { get; set; }
 
     }

@@ -16,7 +16,7 @@ namespace Football_Pool_Tracker.Infrastructure.Provider
         {
             var matchups = new List<Matchup>();
             HtmlNodeCollection matchupNodes = _htmlDataProvider.GetNodes(year, week, ".//div[@class='lngame']/table/tbody/tr");
-
+            var gameDates = _htmlDataProvider.GetNodes(year, week, ".//div[@class='lngame']/table/thead/tr/th");
             for (int i = 0; i < matchupNodes.Count; i+= 2)
             {
                 //TODO: check for null here before we try to access the node.
@@ -27,39 +27,23 @@ namespace Football_Pool_Tracker.Infrastructure.Provider
                 var homeScores = new string[5];
                 if (matchupNodes[i + 1].ChildNodes[1].HasChildNodes && matchupNodes[i + 1].ChildNodes.Count > 5)
                 {
-                    homeScores[0] = matchupNodes[i + 1].ChildNodes[3].InnerText;
-                    homeScores[1] = matchupNodes[i + 1].ChildNodes[4].InnerText;
-                    homeScores[2] = matchupNodes[i + 1].ChildNodes[5].InnerText;
-                    homeScores[3] = matchupNodes[i + 1].ChildNodes[6].InnerText;
-                    homeScores[4] = matchupNodes[i + 1].ChildNodes[7].InnerText;
+                    homeScores = ParseScores(matchupNodes[i + 1]);
                 }
                 else
                 {
-                    homeScores[0] = "--";
-                    homeScores[1] = "--";
-                    homeScores[2] = "--";
-                    homeScores[3] = "--";
-                    homeScores[4] = "--";
+                    homeScores = ParseScores(matchupNodes[i + 1]);
                 }
                 if (matchupNodes[i].ChildNodes[1].HasChildNodes && matchupNodes[i].ChildNodes.Count > 5)
                 {
-                    awayScores[0] = matchupNodes[i].ChildNodes[3].InnerText;
-                    awayScores[1] = matchupNodes[i].ChildNodes[4].InnerText;
-                    awayScores[2] = matchupNodes[i].ChildNodes[5].InnerText;
-                    awayScores[3] = matchupNodes[i].ChildNodes[6].InnerText;
-                    awayScores[4] = matchupNodes[i].ChildNodes[7].InnerText;
+                    awayScores = ParseScores(matchupNodes[i]);
                 }
                 else
                 {
-                    awayScores[0] = "--";
-                    awayScores[1] = "--";
-                    awayScores[2] = "--";
-                    awayScores[3] = "--";
-                    awayScores[4] = "--";
+                    awayScores = ParseScores(matchupNodes[i]);
                 }
                 var matchup = new Matchup()
                 {
-                    GameDate   = DateTime.Today,
+                    //GameDate   = DateTime.Parse(gameDate).ToShortDateString(),
                     GameType   = GameType.REGULAR,
                     Year       = year, 
                     Week       = week,
@@ -107,6 +91,30 @@ namespace Football_Pool_Tracker.Infrastructure.Provider
                 LogoUrl      = logoUrl,
             };
             return team;
+        }
+
+        private string[] ParseScores(HtmlNode node)
+        {
+            string[] scores = new string[5];
+            for (int i = 0; i < node.ChildNodes.Count; i++)
+            {
+                if (node.ChildNodes.Count > 5)
+                {
+                    scores[0] = node.ChildNodes[3].InnerText;
+                    scores[1] = node.ChildNodes[4].InnerText;
+                    scores[2] = node.ChildNodes[5].InnerText;
+                    scores[3] = node.ChildNodes[6].InnerText;
+                    scores[4] = node.ChildNodes[7].InnerText;
+                }
+                else
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        scores[i] = "--";
+                    }
+                }
+            }
+            return scores;
         }
     }
 }

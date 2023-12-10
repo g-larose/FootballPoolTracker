@@ -29,6 +29,14 @@ public class MatchupScheduleViewModel : ViewModelBase
         get => _week;
         set => OnPropertyChanged(ref _week, value);
     }
+
+    private string _gameDate;
+
+    public string GameDate
+    {
+        get => _gameDate;
+        set => OnPropertyChanged(ref _gameDate, value);
+    }
     
     public ICommand SearchMatchupsCommand { get; }
     
