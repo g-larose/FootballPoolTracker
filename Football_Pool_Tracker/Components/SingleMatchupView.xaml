@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
     Width="260"
-    Height="160"
+    Height="150"
     mc:Ignorable="d">
     <md:Card
         md:ElevationAssist.Elevation="Dp3"
@@ -35,7 +35,8 @@
                     Width="64"
                     Height="64"
                     Margin="0,0,10,0"
-                    Source="{Binding Path=AwayTeam.LogoUrl}" />
+                    Source="{Binding Path=AwayTeam.LogoUrl}" 
+                    Stretch="Uniform"/>
                 <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                     <TextBlock
                         Margin="6,0"
@@ -76,7 +77,8 @@
                     Width="64"
                     Height="64"
                     Margin="0,0,10,0"
-                    Source="{Binding Path=HomeTeam.LogoUrl}" />
+                    Source="{Binding Path=HomeTeam.LogoUrl}" 
+                    Stretch="Uniform"/>
                 <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                     <TextBlock
                         Margin="6,0"

@@ -45,11 +45,15 @@
             Grid.Row="1"
             Grid.Column="1"
             Content="{Binding SelectedViewModel}"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="20">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type viewModels:MatchupsViewModel}">
                     <views:MatchupsView />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:MatchupScheduleViewModel}">
+                    <views:ScheduleView />
                 </DataTemplate>
             </ContentControl.Resources>
             

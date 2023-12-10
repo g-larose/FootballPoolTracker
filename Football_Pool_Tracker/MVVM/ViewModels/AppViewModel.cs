@@ -17,23 +17,13 @@ namespace Football_Pool_Tracker.UI.MVVM.ViewModels
             _navigator = navigator;
             _footballDataProvider = footballDataProvider;
             _navigator.CurrentViewModelChanged += OnSelectedViewModelChanged;
-            _navigator.CurrentViewModel = new MatchupsViewModel(_footballDataProvider);
+            _navigator.CurrentViewModel = new MatchupScheduleViewModel(_footballDataProvider);
             OpenCommand = new NavigateCommand<MatchupsViewModel>(_navigator, () => new MatchupsViewModel(_footballDataProvider));
-            TestCommand = new RelayCommand(Test);
+  
         }
-        
         private void OnSelectedViewModelChanged()
         {
             OnPropertyChanged(nameof(SelectedViewModel));
-        }
-
-        private void Test()
-        {
-            var data = _footballDataProvider.GetWeeklyMatchups(0, 0);
-            for (int i = 0; i < data.Count(); i+= 2)
-            {
-               
-            }
         }
     }
 }

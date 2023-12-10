@@ -12,9 +12,9 @@ public class MatchupsViewModel : ViewModelBase
         get => _matchups;
         set => OnPropertyChanged(ref _matchups, value);
     }
-
+    
     public MatchupsViewModel(IFootballDataProvider footballDataProvider)
     {
-        Matchups = footballDataProvider.GetWeeklyMatchups(0, 0);
+        Matchups = footballDataProvider.GetWeeklyMatchups(0,0);
     }
 }

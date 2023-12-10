@@ -14,8 +14,8 @@ namespace Football_Pool_Tracker.Domain.Entities
         public Team HomeTeam { get; set; } = new();
         public uint Year { get; set; }
         public uint Week { get; set; }
-        public int AwayTeamScore { get; set; }
-        public int HomeTeamScore { get; set; }
+        public List<int> AwayTeamScores { get; set; }
+        public List<int> HomeTeamScores { get; set; }
         public DateTime GameDate { get; set; }
         public GameType GameType { get; set; }
 

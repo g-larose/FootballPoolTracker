@@ -10,7 +10,8 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
    <Grid>
-        <ListBox ItemsSource="{Binding Matchups}">
+        <ListBox ItemsSource="{Binding Matchups}"
+                 Style="{StaticResource MaterialDesignListBox}">
              <ListBox.ItemsPanel>
                   <ItemsPanelTemplate>
                        <WrapPanel />
