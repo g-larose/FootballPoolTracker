@@ -25,6 +25,7 @@ namespace Football_Pool_Tracker.Infrastructure.Provider
                 var awayNode            = ParseTeamData(matchupNodes[i]);
                 var awayScores = new string[5];
                 var homeScores = new string[5];
+                
                 if (matchupNodes[i + 1].ChildNodes[1].HasChildNodes && matchupNodes[i + 1].ChildNodes.Count > 5)
                 {
                     homeScores = ParseScores(matchupNodes[i + 1]);
@@ -41,33 +42,39 @@ namespace Football_Pool_Tracker.Infrastructure.Provider
                 {
                     awayScores = ParseScores(matchupNodes[i]);
                 }
+
+                #region CREATE MATCHUP
+
                 var matchup = new Matchup()
-                {
-                    //GameDate   = DateTime.Parse(gameDate).ToShortDateString(),
-                    GameType   = GameType.REGULAR,
-                    Year       = year, 
-                    Week       = week,
-                    AwayTeam   = new Team()
-                    {
-                        Name             = awayNode.Name,
-                        Record           = awayNode.Record,
-                        Abbreviation     = awayNode.Abbreviation,
-                        Division         = awayNode.Division,
-                        LogoUrl          = awayNode.LogoUrl,
-                        IsWinner         = false,
-                        Scores           = awayScores,
-                    },
-                    HomeTeam = new Team()
-                    {
-                        Name            = homeNode.Name,
-                        Record          = homeNode.Record,
-                        Abbreviation    = homeNode.Abbreviation,
-                        Division        = homeNode.Division,
-                        LogoUrl         = homeNode.LogoUrl,
-                        IsWinner        = false,
-                        Scores          = homeScores,
-                    }
-                };
+                                {
+                                    //GameDate   = DateTime.Parse(gameDate).ToShortDateString(),
+                                    GameType   = GameType.REGULAR,
+                                    Year       = year, 
+                                    Week       = week,
+                                    AwayTeam   = new Team()
+                                    {
+                                        Name             = awayNode.Name,
+                                        Record           = awayNode.Record,
+                                        Abbreviation     = awayNode.Abbreviation,
+                                        Division         = awayNode.Division,
+                                        LogoUrl          = awayNode.LogoUrl,
+                                        IsWinner         = false,
+                                        Scores           = awayScores,
+                                    },
+                                    HomeTeam = new Team()
+                                    {
+                                        Name            = homeNode.Name,
+                                        Record          = homeNode.Record,
+                                        Abbreviation    = homeNode.Abbreviation,
+                                        Division        = homeNode.Division,
+                                        LogoUrl         = homeNode.LogoUrl,
+                                        IsWinner        = false,
+                                        Scores          = homeScores,
+                                    }
+                                };
+
+                #endregion
+                
                 matchups.Add(matchup);
             }
             return matchups;

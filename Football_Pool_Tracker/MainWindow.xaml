@@ -33,6 +33,9 @@
                           Command="{Binding OpenCommand}"/>
                 <MenuItem Header="_Exit" Command="{x:Static ApplicationCommands.Close}" />
             </MenuItem>
+            <MenuItem Header="Schedule">
+                <MenuItem Header="View Schedule" />
+            </MenuItem>
             <MenuItem Header="_Stats">
                 <MenuItem Header="User Stats" />
                 <MenuItem Header="Team Stats" />
