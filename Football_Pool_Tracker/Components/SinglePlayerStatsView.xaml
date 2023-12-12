@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Football_Pool_Tracker.UI.Components.SinglePlayerStatsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Football_Pool_Tracker.UI.Components"
+             mc:Ignorable="d"
+             MinHeight="84"
+             Height="84" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="64"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                CornerRadius="50">
+            <Image Grid.Column="1"
+                           Grid.Row="1"
+                           Stretch="UniformToFill"
+                           Width="64"
+                           Source="" />
+        </Border>
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Grid.Column="2"
+                    Grid.Row="1">
+            <StackPanel Orientation="Vertical"
+                        Margin="10">
+               <TextBlock Text="PlayerName" 
+                                      FontSize="14"
+                                      FontWeight="Bold"/>
+               <TextBlock Text="Team" 
+                          FontSize="10"/> 
+            </StackPanel>
+            <StackPanel Orientation="Vertical"
+                        Margin="10">
+                <TextBlock Text="Stat Name" 
+                           FontSize="14"
+                           FontWeight="Bold"/>
+                <TextBlock Text="stat" 
+                           FontSize="10"/> 
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
