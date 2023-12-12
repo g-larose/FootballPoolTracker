@@ -3,5 +3,5 @@ namespace Football_Pool_Tracker.Application.Interface;
 
 public interface IFootballPlayerProvider
 {
-    List<NFLPlayer> GetPlayers();
+    List<NFLPlayer> GetCurrentNFLPlayers();
 }

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football_Pool_Tracker.Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football_Pool_Tracker.Infrastructure", "Football_Pool_Tracker.Infrastructure\Football_Pool_Tracker.Infrastructure.csproj", "{2A62AD29-8F7C-4CCA-BD77-CB562851A1C8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BA316302-5CD3-4162-8BF6-DED2E80B916A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3048B511-AA15-46F5-AE47-0DE94CA9359A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
