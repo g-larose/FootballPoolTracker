@@ -19,7 +19,7 @@
              </ListBox.ItemsPanel>
              <ListBox.ItemTemplate>
                   <DataTemplate>
-                       <components:SingleMatchupView />
+                         <components:SingleMatchupView />
                   </DataTemplate>
              </ListBox.ItemTemplate>
         </ListBox>

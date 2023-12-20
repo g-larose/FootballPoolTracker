@@ -12,6 +12,13 @@ public class MatchupsViewModel : ViewModelBase
         get => _matchups;
         set => OnPropertyChanged(ref _matchups, value);
     }
+
+    private bool _isenabled;
+    public bool IsEnabled
+    {
+        get => _isenabled;
+        set => OnPropertyChanged(ref _isenabled, value);
+    }
     
     public MatchupsViewModel(IFootballDataProvider footballDataProvider)
     {

@@ -9,7 +9,8 @@ namespace Football_Pool_Tracker.Domain.Entities
 {
     public class Matchup
     {
-        public int Id { get; set; } //this is for DB lookup only.
+        public int Id { get; set; } 
+        public int GroupId { get; set; }
         public Team AwayTeam { get; set; } = new();
         public Team HomeTeam { get; set; } = new();
         public uint Year { get; set; }

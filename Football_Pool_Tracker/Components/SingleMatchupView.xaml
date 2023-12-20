@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
     Width="260"
-    Height="150"
+    Height="164"
     mc:Ignorable="d">
     <md:Card
         md:ElevationAssist.Elevation="Dp3"
@@ -24,16 +24,19 @@
             <StackPanel
                 Grid.Row="0"
                 Grid.Column="0"
-                Margin="10"
+                Margin="4"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <CheckBox
+                <RadioButton
                     Height="20"
                     Margin="0,0,10,0"
-                    Style="{StaticResource MaterialDesignCheckBox}" />
+                    IsEnabled="{Binding IsEnabled}"
+                    GroupName="{Binding Path=Id}"
+                    Style="{StaticResource MaterialDesignRadioButton}" 
+                    />
                 <Image
-                    Width="64"
-                    Height="64"
+                    Width="72"
+                    Height="72"
                     Margin="0,0,10,0"
                     Source="{Binding Path=AwayTeam.LogoUrl}" 
                     Stretch="Uniform"/>
@@ -66,16 +69,18 @@
             <StackPanel
                 Grid.Row="1"
                 Grid.Column="0"
-                Margin="10"
+                Margin="4"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <CheckBox
+                <RadioButton
                     Height="20"
                     Margin="0,0,10,0"
-                    Style="{StaticResource MaterialDesignCheckBox}" />
+                    GroupName="{Binding Path=Id}"
+                    Style="{StaticResource MaterialDesignRadioButton}" 
+                    />
                 <Image
-                    Width="64"
-                    Height="64"
+                    Width="72"
+                    Height="72"
                     Margin="0,0,10,0"
                     Source="{Binding Path=HomeTeam.LogoUrl}" 
                     Stretch="Uniform"/>

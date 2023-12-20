@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BA316302
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3048B511-AA15-46F5-AE47-0DE94CA9359A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football_Pool_Tracker.Infrastructure_Tests", "Football_Pool_Tracker.Infrastructure_Tests\Football_Pool_Tracker.Infrastructure_Tests.csproj", "{956DCDA6-A7C9-4A15-8717-A59961C57DBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,11 +39,22 @@ Global
 		{2A62AD29-8F7C-4CCA-BD77-CB562851A1C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A62AD29-8F7C-4CCA-BD77-CB562851A1C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A62AD29-8F7C-4CCA-BD77-CB562851A1C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956DCDA6-A7C9-4A15-8717-A59961C57DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956DCDA6-A7C9-4A15-8717-A59961C57DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956DCDA6-A7C9-4A15-8717-A59961C57DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956DCDA6-A7C9-4A15-8717-A59961C57DBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CBE9B14-840A-4D00-B8C7-E014CE75F5F5}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA7EC1E1-3C8D-45C3-8260-2E05CC2352EE} = {3048B511-AA15-46F5-AE47-0DE94CA9359A}
+		{98512FD4-D3AC-4F8C-A8EB-C83477F1FB17} = {3048B511-AA15-46F5-AE47-0DE94CA9359A}
+		{2A62AD29-8F7C-4CCA-BD77-CB562851A1C8} = {3048B511-AA15-46F5-AE47-0DE94CA9359A}
+		{C57AD85D-4129-4595-80FE-A779938DCB63} = {3048B511-AA15-46F5-AE47-0DE94CA9359A}
+		{956DCDA6-A7C9-4A15-8717-A59961C57DBF} = {BA316302-5CD3-4162-8BF6-DED2E80B916A}
 	EndGlobalSection
 EndGlobal

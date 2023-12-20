@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              MinHeight="84"
              Height="84" Width="600">
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="64"/>

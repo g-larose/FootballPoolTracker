@@ -12,7 +12,7 @@
         md:ElevationAssist.Elevation="Dp3"
         Background="{StaticResource PrimaryBackgroundDarkToSecondaryBackgroundDarkGradientBrush}"
         UniformCornerRadius="6">
-        <Grid>
+        <Grid ShowGridLines="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>

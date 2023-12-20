@@ -17,6 +17,7 @@ namespace Football_Pool_Tracker.Infrastructure.Provider
             var matchups = new List<Matchup>();
             HtmlNodeCollection matchupNodes = _htmlDataProvider.GetNodes(year, week, ".//div[@class='lngame']/table/tbody/tr");
             var gameDates = _htmlDataProvider.GetNodes(year, week, ".//div[@class='lngame']/table/thead/tr/th");
+            var id = 0;
             for (int i = 0; i < matchupNodes.Count; i+= 2)
             {
                 //TODO: check for null here before we try to access the node.
@@ -44,10 +45,10 @@ namespace Football_Pool_Tracker.Infrastructure.Provider
                 }
 
                 #region CREATE MATCHUP
-
                 var matchup = new Matchup()
                                 {
                                     //GameDate   = DateTime.Parse(gameDate).ToShortDateString(),
+                                    Id = id += 1,
                                     GameType   = GameType.REGULAR,
                                     Year       = year, 
                                     Week       = week,
